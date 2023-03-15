@@ -12,6 +12,7 @@ const App = memo(() => {
   
   return (
     <div className='app'>
+      <h2>呵呵哈哈哈</h2>
       <AppHeader />
       <Suspense>
         <div className='page'>
