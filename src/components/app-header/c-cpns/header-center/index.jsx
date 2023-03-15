@@ -13,6 +13,9 @@ const HeaderCenter = memo(() => {
           <IconSearchBar/>
         </div>
       </div>
+      {/* <div className="search-detail">
+
+      </div> */}
     </CenterWrapper>
   )
 })

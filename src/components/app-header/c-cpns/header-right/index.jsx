@@ -13,15 +13,16 @@ const HeaderRight = memo(() => {
     function windowHandleClick() {
       setShowPanel(false)
     }
-    window.addEventListener("click", windowHandleClick, true)
+    window.addEventListener("click", windowHandleClick)
     return () => {
-      window.removeEventListener("click", windowHandleClick, true)
+      window.removeEventListener("click", windowHandleClick)
     }
   }, [])
 
   /** 事件处理函数 */
-  function profileClickHandle() {
-    setShowPanel(true)
+  function profileClickHandle(e) {
+    setShowPanel(!showPanel)
+    e.stopPropagation()
   }
 
   return (
@@ -34,7 +35,7 @@ const HeaderRight = memo(() => {
         </span>
       </div>
 
-      <div className='profile' onClick={profileClickHandle}>
+      <div className='profile' onClick={e=>profileClickHandle(e)}>
         <IconMenu/>
         <IconAvatar/>
 
